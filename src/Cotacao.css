@@ -1,0 +1,407 @@
+
+/* =========================================================
+   MOHAMAD TRANSPORTES
+   PÁGINA DE COTAÇÃO — PREMIUM CORPORATE DESIGN
+   ========================================================= */
+
+.cotacao-page {
+  --cotacao-navy: #0a1b2e;
+  --cotacao-navy-light: #102944;
+  --cotacao-blue: #0878e8;
+  --cotacao-blue-light: #eaf4ff;
+  --cotacao-text: #172b42;
+  --cotacao-muted: #718198;
+  --cotacao-border: #e3eaf2;
+  --cotacao-white: #ffffff;
+
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  color: var(--cotacao-text);
+  background:
+    radial-gradient(
+      circle at 8% 20%,
+      rgba(8, 120, 232, 0.055),
+      transparent 27%
+    ),
+    radial-gradient(
+      circle at 92% 55%,
+      rgba(8, 120, 232, 0.045),
+      transparent 25%
+    ),
+    #f5f8fc;
+  font-family: inherit;
+}
+
+/* =========================================================
+   CABEÇALHO
+   ========================================================= */
+
+.cotacao-header {
+  position: relative;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  min-height: 88px;
+  padding: 18px 7%;
+  background: rgba(255, 255, 255, 0.94);
+  border-bottom: 1px solid rgba(220, 230, 241, 0.9);
+  box-shadow: 0 5px 25px rgba(15, 39, 66, 0.035);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.cotacao-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 11px;
+  padding: 11px 16px;
+  color: #455a72;
+  background: #f5f8fc;
+  border: 1px solid #e7edf5;
+  border-radius: 10px;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 700;
+  transition:
+    color 0.25s ease,
+    background 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.cotacao-back:hover {
+  color: var(--cotacao-blue);
+  background: var(--cotacao-blue-light);
+  border-color: #cce4ff;
+  transform: translateX(-3px);
+}
+
+.cotacao-back:focus-visible {
+  outline: 3px solid rgba(8, 120, 232, 0.25);
+  outline-offset: 3px;
+}
+
+.cotacao-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  color: #103b67;
+  font-size: 19px;
+  font-weight: 900;
+  letter-spacing: 1.4px;
+  line-height: 1.1;
+}
+
+.cotacao-brand span {
+  margin-top: 7px;
+  color: #77869a;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 3px;
+}
+
+/* =========================================================
+   INTRODUÇÃO — HERO
+   ========================================================= */
+
+.cotacao-intro {
+  position: relative;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 82px 24px 54px;
+  text-align: center;
+}
+
+.cotacao-label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px 15px;
+  color: #0867c6;
+  background: rgba(231, 243, 255, 0.85);
+  border: 1px solid rgba(191, 222, 255, 0.8);
+  border-radius: 50px;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 2px;
+}
+
+.cotacao-label::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  flex-shrink: 0;
+  background: #0878e8;
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px rgba(8, 120, 232, 0.11);
+}
+
+.cotacao-intro h1 {
+  margin: 27px 0 20px;
+  color: var(--cotacao-navy);
+  font-size: clamp(38px, 5.2vw, 66px);
+  font-weight: 900;
+  line-height: 1.06;
+  letter-spacing: -2.8px;
+}
+
+.cotacao-intro h1 span {
+  color: var(--cotacao-blue);
+}
+
+.cotacao-intro p {
+  max-width: 590px;
+  margin: 0 auto;
+  color: #687b92;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.9;
+}
+
+/* =========================================================
+   FORMULÁRIO
+   Mantém compatibilidade com o elemento #cotacao existente
+   em QuoteForm.tsx.
+   ========================================================= */
+
+.cotacao-page #cotacao {
+  position: relative;
+  width: min(100% - 48px, 1000px);
+  margin: 0 auto 75px;
+  padding: 38px;
+  background: var(--cotacao-white);
+  border: 1px solid rgba(222, 231, 241, 0.95);
+  border-radius: 22px;
+  box-shadow:
+    0 25px 75px rgba(16, 42, 72, 0.075),
+    0 5px 18px rgba(16, 42, 72, 0.035);
+  scroll-margin-top: 25px;
+}
+
+/* Títulos e textos internos do formulário */
+
+.cotacao-page #cotacao h1,
+.cotacao-page #cotacao h2 {
+  color: var(--cotacao-navy);
+  letter-spacing: -0.7px;
+}
+
+.cotacao-page #cotacao p {
+  line-height: 1.75;
+}
+
+/* Etiquetas dos campos */
+
+.cotacao-page #cotacao label {
+  color: #30465f;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+/* Campos de texto */
+
+.cotacao-page #cotacao input,
+.cotacao-page #cotacao select,
+.cotacao-page #cotacao textarea {
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 49px;
+  padding: 13px 15px;
+  color: #172b42;
+  background: #f9fbfe;
+  border: 1px solid #dce5ef;
+  border-radius: 10px;
+  outline: none;
+  font: inherit;
+  font-size: 13px;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.cotacao-page #cotacao textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.cotacao-page #cotacao input::placeholder,
+.cotacao-page #cotacao textarea::placeholder {
+  color: #9aa8b8;
+}
+
+.cotacao-page #cotacao input:focus,
+.cotacao-page #cotacao select:focus,
+.cotacao-page #cotacao textarea:focus {
+  background: #ffffff;
+  border-color: var(--cotacao-blue);
+  box-shadow: 0 0 0 4px rgba(8, 120, 232, 0.09);
+}
+
+/* Botões */
+
+.cotacao-page #cotacao button {
+  transition:
+    background 0.25s ease,
+    box-shadow 0.25s ease,
+    transform 0.25s ease;
+}
+
+.cotacao-page #cotacao button[type="submit"] {
+  min-height: 51px;
+  padding: 14px 24px;
+  color: #ffffff;
+  background: linear-gradient(135deg, #0878e8, #075fbd);
+  border: 0;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(8, 120, 232, 0.2);
+  font-size: 13px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.cotacao-page #cotacao button[type="submit"]:hover {
+  background: linear-gradient(135deg, #1688f8, #0869ce);
+  box-shadow: 0 12px 26px rgba(8, 120, 232, 0.28);
+  transform: translateY(-2px);
+}
+
+.cotacao-page #cotacao button:focus-visible {
+  outline: 3px solid rgba(8, 120, 232, 0.3);
+  outline-offset: 3px;
+}
+
+/* =========================================================
+   RODAPÉ
+   ========================================================= */
+
+.cotacao-footer {
+  position: relative;
+  padding: 28px 20px;
+  color: #8290a2;
+  border-top: 1px solid rgba(220, 230, 241, 0.85);
+  font-size: 11px;
+  line-height: 1.8;
+  text-align: center;
+}
+
+.cotacao-footer::before {
+  content: "";
+  display: block;
+  width: 34px;
+  height: 3px;
+  margin: 0 auto 17px;
+  background: var(--cotacao-blue);
+  border-radius: 10px;
+}
+
+/* =========================================================
+   TABLETS
+   ========================================================= */
+
+@media (max-width: 900px) {
+  .cotacao-header {
+    padding-right: 5%;
+    padding-left: 5%;
+  }
+
+  .cotacao-intro {
+    padding-top: 65px;
+  }
+
+  .cotacao-page #cotacao {
+    padding: 30px;
+  }
+}
+
+/* =========================================================
+   TELEMÓVEIS
+   ========================================================= */
+
+@media (max-width: 600px) {
+  .cotacao-header {
+    min-height: 76px;
+    padding: 15px 5%;
+  }
+
+  .cotacao-back {
+    gap: 7px;
+    padding: 10px 11px;
+    font-size: 11px;
+  }
+
+  .cotacao-brand {
+    font-size: 14px;
+    letter-spacing: 0.7px;
+  }
+
+  .cotacao-brand span {
+    margin-top: 5px;
+    font-size: 7px;
+    letter-spacing: 1.8px;
+  }
+
+  .cotacao-intro {
+    padding: 50px 22px 35px;
+  }
+
+  .cotacao-label {
+    padding: 9px 12px;
+    font-size: 9px;
+    letter-spacing: 1.5px;
+  }
+
+  .cotacao-intro h1 {
+    margin: 23px 0 17px;
+    font-size: clamp(36px, 10vw, 48px);
+    letter-spacing: -1.8px;
+    line-height: 1.1;
+  }
+
+  .cotacao-intro p {
+    font-size: 13px;
+    line-height: 1.8;
+  }
+
+  .cotacao-page #cotacao {
+    width: calc(100% - 28px);
+    margin-bottom: 42px;
+    padding: 23px 17px;
+    border-radius: 16px;
+  }
+
+  .cotacao-page #cotacao input,
+  .cotacao-page #cotacao select,
+  .cotacao-page #cotacao textarea {
+    min-height: 47px;
+    padding: 12px;
+    font-size: 13px;
+  }
+
+  .cotacao-page #cotacao button[type="submit"] {
+    width: 100%;
+  }
+
+  .cotacao-footer {
+    padding: 24px 18px;
+    font-size: 10px;
+  }
+}
+
+/* =========================================================
+   ACESSIBILIDADE — MOVIMENTO REDUZIDO
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .cotacao-back,
+  .cotacao-page #cotacao input,
+  .cotacao-page #cotacao select,
+  .cotacao-page #cotacao textarea,
+  .cotacao-page #cotacao button {
+    transition: none;
+  }
+}
