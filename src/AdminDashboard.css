@@ -1115,3 +1115,697 @@
     transition-duration: 0.01ms !important;
   }
 }
+
+
+
+
+/* =========================================================
+   MOHAMAD TRANSPORTES
+   PREMIUM ADMIN DESIGN — FINAL UPGRADE
+   Preserva a fotografia original do camião
+   ========================================================= */
+
+/* IDENTIDADE GERAL */
+
+.admin-dashboard {
+  background:
+    radial-gradient(ellipse at 85% 0%, rgba(7,157,221,.07), transparent 35%),
+    #f2f6fa;
+  font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+}
+
+.admin-topbar {
+  min-height: 86px;
+  padding-right: clamp(24px, 6vw, 90px);
+  padding-left: clamp(24px, 6vw, 90px);
+  background: linear-gradient(105deg, #ffffff 0%, #fafdff 100%);
+  border-bottom: 1px solid #dce7ef;
+  box-shadow: 0 5px 24px rgba(9,28,45,.055);
+}
+
+.admin-brand {
+  gap: 16px;
+}
+
+.admin-brand-icon {
+  width: 53px;
+  height: 53px;
+  background: linear-gradient(145deg, #079ddd, #0875a8);
+  border: none;
+  border-radius: 11px;
+  box-shadow: 0 7px 18px rgba(7,157,221,.24);
+}
+
+.admin-brand strong {
+  font-size: 13px;
+  letter-spacing: 1px;
+}
+
+.admin-brand span {
+  color: #718096;
+  font-size: 12px;
+}
+
+.admin-refresh,
+.admin-logout {
+  min-height: 43px;
+  padding: 11px 17px;
+  border-radius: 8px;
+  font-size: 12px;
+  transition: all .22s ease;
+}
+
+.admin-refresh:hover:not(:disabled) {
+  color: #087eb2;
+  background: #e9f7fd;
+  border-color: #a9def2;
+  transform: translateY(-2px);
+}
+
+.admin-logout {
+  background: #fff8f7;
+  border-color: #f0dedb;
+}
+
+.admin-logout:hover {
+  color: white;
+  background: #a6423c;
+  border-color: #a6423c;
+  transform: translateY(-2px);
+}
+
+.admin-content {
+  max-width: 1600px;
+  padding-top: 40px;
+  padding-bottom: 75px;
+}
+
+/* =========================================================
+   HERO — FOTOGRAFIA ORIGINAL DO CAMIÃO
+   ========================================================= */
+
+.admin-page-heading {
+  min-height: 270px;
+  margin-bottom: 33px;
+  padding: 43px clamp(27px, 4.5vw, 58px);
+
+  /* Mantém a imagem original definida na primeira camada */
+  background-position: center 55%;
+  background-size: cover;
+
+  border: 1px solid rgba(255,255,255,.16);
+  border-radius: 13px;
+  box-shadow:
+    0 16px 38px rgba(9,28,45,.16),
+    0 3px 9px rgba(9,28,45,.08);
+}
+
+.admin-page-heading::before {
+  background:
+    linear-gradient(
+      100deg,
+      rgba(4,19,32,.96) 0%,
+      rgba(7,29,47,.89) 43%,
+      rgba(8,31,49,.64) 73%,
+      rgba(8,31,49,.43) 100%
+    );
+}
+
+.admin-page-heading::after {
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  right: 0;
+  width: 5px;
+  height: 100%;
+  content: "";
+  background: linear-gradient(180deg, #55c9f4, #079ddd);
+  box-shadow: 0 0 22px rgba(7,157,221,.45);
+}
+
+.admin-page-heading > div {
+  max-width: 720px;
+}
+
+.admin-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+  color: #75d7ff;
+  font-size: 10px;
+  letter-spacing: 2.4px;
+}
+
+.admin-eyebrow::before {
+  width: 27px;
+  height: 2px;
+  content: "";
+  background: #079ddd;
+}
+
+.admin-page-heading h1 {
+  font-size: clamp(32px, 3.5vw, 45px);
+  letter-spacing: -1.5px;
+  line-height: 1.15;
+  text-shadow: 0 3px 15px rgba(0,0,0,.18);
+}
+
+.admin-page-heading > div > p:last-child {
+  max-width: 570px;
+  margin-top: 16px;
+  color: rgba(255,255,255,.86);
+  font-size: 13px;
+  line-height: 1.9;
+}
+
+.admin-total-badge {
+  padding: 14px 20px;
+  background: linear-gradient(135deg, #079ddd, #0876a9);
+  border: 1px solid rgba(255,255,255,.32);
+  border-radius: 8px;
+  box-shadow: 0 8px 20px rgba(7,157,221,.25);
+  font-size: 12px;
+  letter-spacing: .2px;
+}
+
+/* =========================================================
+   CARTÕES ESTATÍSTICOS
+   ========================================================= */
+
+.admin-stats {
+  gap: 20px;
+  margin-bottom: 33px;
+}
+
+.admin-stat-card {
+  min-height: 178px;
+  padding: 25px 25px 23px;
+  background: linear-gradient(145deg, #ffffff, #fbfdff);
+  border: 1px solid #e3eaf0;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(16,42,67,.045);
+  transition:
+    transform .25s ease,
+    border-color .25s ease,
+    box-shadow .25s ease;
+}
+
+.admin-stat-card::after {
+  height: 4px;
+  background: #d6e4ed;
+}
+
+.admin-stat-card:nth-child(1)::after {
+  background: linear-gradient(90deg, #079ddd, #5bc6ed);
+}
+
+.admin-stat-card:nth-child(2)::after {
+  background: linear-gradient(90deg, #d99a36, #f0c16d);
+}
+
+.admin-stat-card:nth-child(3)::after {
+  background: linear-gradient(90deg, #7663bd, #aa9be1);
+}
+
+.admin-stat-card:nth-child(4)::after {
+  background: linear-gradient(90deg, #2f9665, #73c79a);
+}
+
+.admin-stat-card:hover {
+  transform: translateY(-5px);
+  border-color: #b9dfef;
+  box-shadow: 0 15px 32px rgba(16,42,67,.09);
+}
+
+.admin-stat-icon {
+  width: 49px;
+  height: 49px;
+  margin-bottom: 19px;
+  border-radius: 10px;
+}
+
+.stat-blue {
+  background: linear-gradient(145deg, #079ddd, #0875a8);
+  box-shadow: 0 5px 14px rgba(7,157,221,.2);
+}
+
+.stat-orange {
+  background: #fff4df;
+}
+
+.stat-purple {
+  background: #f0ecfb;
+}
+
+.stat-green {
+  background: #e8f6ed;
+}
+
+.admin-stat-card > span {
+  color: #65788b;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.admin-stat-card > strong {
+  margin-top: 10px;
+  color: #102a43;
+  font-size: clamp(30px, 2.7vw, 38px);
+  letter-spacing: -1.5px;
+}
+
+.admin-stat-card > small {
+  margin-top: 11px;
+  color: #8796a4;
+  font-size: 10px;
+}
+
+/* =========================================================
+   ÁREA DE PEDIDOS
+   ========================================================= */
+
+.admin-orders {
+  border: 1px solid #e2eaf0;
+  border-radius: 13px;
+  box-shadow: 0 7px 26px rgba(16,42,67,.05);
+}
+
+.admin-orders-heading {
+  padding: 28px 29px 23px;
+  background: linear-gradient(180deg, #ffffff, #fcfdff);
+}
+
+.admin-orders-heading h2 {
+  color: #102a43;
+  font-size: 20px;
+  letter-spacing: -.5px;
+}
+
+.admin-orders-heading p {
+  margin-top: 9px;
+  color: #7b8997;
+  font-size: 12px;
+}
+
+/* =========================================================
+   PESQUISA E FILTROS
+   ========================================================= */
+
+.admin-filters {
+  gap: 13px;
+  padding: 0 29px 25px;
+}
+
+.admin-search {
+  min-height: 48px;
+  padding: 0 16px;
+  background: #f8fafc;
+  border-radius: 8px;
+}
+
+.admin-search:focus-within {
+  background: #ffffff;
+  border-color: #079ddd;
+  box-shadow: 0 0 0 4px rgba(7,157,221,.09);
+}
+
+.admin-search input {
+  font-size: 13px;
+}
+
+.admin-filters select,
+.admin-detail-status select {
+  min-height: 48px;
+  border-radius: 8px;
+  font-size: 12px;
+}
+
+.admin-filters select {
+  background-color: #f8fafc;
+}
+
+.admin-filters select:focus,
+.admin-detail-status select:focus {
+  border-color: #079ddd;
+  box-shadow: 0 0 0 3px rgba(7,157,221,.08);
+}
+
+/* =========================================================
+   TABELA
+   ========================================================= */
+
+.admin-table th {
+  padding-top: 17px;
+  padding-bottom: 17px;
+  color: #526a7e;
+  background: #edf6fb;
+  border-top: 1px solid #e3edf3;
+  border-bottom: 1px solid #dfeaf1;
+  font-size: 10px;
+  letter-spacing: .85px;
+}
+
+.admin-table td {
+  padding-top: 19px;
+  padding-bottom: 19px;
+  color: #4c5d70;
+  font-size: 12px;
+}
+
+.admin-table tbody tr {
+  transition: background .2s ease;
+}
+
+.admin-table tbody tr:hover {
+  background: #f1f9fd;
+}
+
+.admin-table td > strong {
+  color: #102a43;
+  font-size: 13px;
+}
+
+.admin-table-secondary {
+  color: #8493a1;
+  font-size: 11px;
+}
+
+/* =========================================================
+   ESTADOS
+   ========================================================= */
+
+.admin-status {
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 10px;
+  letter-spacing: .1px;
+}
+
+.status-novo {
+  color: #986017;
+  background: #fff6e7;
+  border-color: #f3e1bd;
+}
+
+.status-em-análise {
+  color: #075c86;
+  background: #e9f7fd;
+  border-color: #c5e8f6;
+}
+
+.status-cotação-enviada {
+  color: #6850a5;
+  background: #f3effb;
+  border-color: #e4dcf6;
+}
+
+.status-aceite {
+  color: #26724b;
+  background: #eaf7ef;
+  border-color: #d3eddd;
+}
+
+.status-recusado {
+  color: #a6423c;
+  background: #fff0ee;
+  border-color: #f2d8d4;
+}
+
+/* =========================================================
+   BOTÃO DE DETALHES
+   ========================================================= */
+
+.admin-view-button {
+  min-height: 38px;
+  padding: 9px 15px;
+  background: linear-gradient(135deg, #079ddd, #0876a9);
+  border: 1px solid transparent;
+  border-radius: 7px;
+  font-size: 11px;
+  box-shadow: 0 4px 11px rgba(7,157,221,.15);
+  transition: all .22s ease;
+}
+
+.admin-view-button:hover {
+  background: linear-gradient(135deg, #087eb2, #075c85);
+  transform: translateY(-2px);
+  box-shadow: 0 7px 16px rgba(7,157,221,.23);
+}
+
+/* =========================================================
+   ESTADO VAZIO E ALERTAS
+   ========================================================= */
+
+.admin-empty {
+  min-height: 280px;
+}
+
+.admin-empty > svg {
+  padding: 10px;
+  width: 58px;
+  height: 58px;
+  background: #eaf7fd;
+  border-radius: 13px;
+}
+
+.admin-alert {
+  padding: 16px 19px;
+  border-radius: 9px;
+  box-shadow: 0 4px 14px rgba(16,42,67,.035);
+}
+
+/* =========================================================
+   MODAL DE DETALHES
+   ========================================================= */
+
+.admin-modal-backdrop {
+  background: rgba(5,20,34,.77);
+  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(7px);
+}
+
+.admin-modal {
+  max-width: 760px;
+  padding: 33px;
+  border: 1px solid rgba(255,255,255,.65);
+  border-radius: 14px;
+  box-shadow: 0 28px 90px rgba(0,0,0,.3);
+}
+
+.admin-modal-heading {
+  padding-bottom: 25px;
+}
+
+.admin-modal-heading h2 {
+  font-size: 27px;
+  letter-spacing: -.8px;
+}
+
+.admin-modal-close {
+  width: 42px;
+  height: 42px;
+  border-radius: 9px;
+}
+
+.admin-detail-grid {
+  padding-top: 13px;
+  padding-bottom: 25px;
+}
+
+.admin-detail-grid > div {
+  padding: 19px 12px 19px 0;
+}
+
+.admin-detail-grid > div > span,
+.admin-detail-notes > span {
+  color: #77899a;
+  font-size: 11px;
+  letter-spacing: .2px;
+}
+
+.admin-detail-grid > div > strong {
+  color: #263d54;
+  font-size: 13px;
+}
+
+.admin-detail-notes {
+  padding: 21px;
+  background: linear-gradient(145deg, #f1f8fc, #f9fbfd);
+  border: 1px solid #e0ebf2;
+  border-left: 4px solid #079ddd;
+  border-radius: 9px;
+}
+
+.admin-detail-notes p {
+  color: #42566b;
+  font-size: 13px;
+  line-height: 1.9;
+}
+
+.admin-detail-status {
+  margin-top: 25px;
+}
+
+.admin-detail-status select {
+  background-color: #f8fafc;
+}
+
+.admin-modal-actions {
+  margin-top: 27px;
+  padding-top: 24px;
+}
+
+.admin-whatsapp-button,
+.admin-secondary-button {
+  min-height: 46px;
+  padding: 13px 19px;
+  border-radius: 8px;
+  font-size: 12px;
+  transition: all .2s ease;
+}
+
+.admin-whatsapp-button {
+  background: linear-gradient(135deg, #198b55, #11683b);
+  box-shadow: 0 5px 13px rgba(22,128,74,.16);
+}
+
+.admin-whatsapp-button:hover {
+  background: #105c35;
+  transform: translateY(-2px);
+}
+
+.admin-secondary-button:hover {
+  background: #edf7fb;
+  border-color: #c5e2ef;
+}
+
+/* =========================================================
+   INTERAÇÃO
+   ========================================================= */
+
+.admin-dashboard button,
+.admin-dashboard a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.admin-dashboard button:active {
+  transform: scale(.98);
+}
+
+/* =========================================================
+   RESPONSIVIDADE
+   ========================================================= */
+
+@media (max-width: 1100px) {
+  .admin-content {
+    padding-right: 28px;
+    padding-left: 28px;
+  }
+
+  .admin-topbar {
+    padding-right: 28px;
+    padding-left: 28px;
+  }
+}
+
+@media (max-width: 650px) {
+  .admin-topbar {
+    padding: 18px;
+  }
+
+  .admin-page-heading {
+    min-height: 245px;
+    padding: 29px 21px;
+    background-position: 61% center;
+    border-radius: 11px;
+  }
+
+  .admin-page-heading::before {
+    background: linear-gradient(
+      180deg,
+      rgba(5,22,36,.80) 0%,
+      rgba(5,22,36,.96) 100%
+    );
+  }
+
+  .admin-page-heading h1 {
+    font-size: 29px;
+  }
+
+  .admin-page-heading > div > p:last-child {
+    font-size: 12px;
+  }
+
+  .admin-stats {
+    gap: 12px;
+  }
+
+  .admin-stat-card {
+    min-height: 160px;
+    padding: 17px;
+    border-radius: 9px;
+  }
+
+  .admin-stat-card > strong {
+    font-size: 29px;
+  }
+
+  .admin-orders {
+    border-radius: 10px;
+  }
+
+  .admin-orders-heading {
+    padding: 21px 17px 17px;
+  }
+
+  .admin-filters {
+    padding: 0 17px 18px;
+  }
+
+  .admin-modal {
+    padding: 21px 17px;
+    border-radius: 11px;
+  }
+
+  .admin-modal-heading h2 {
+    font-size: 21px;
+  }
+
+  .admin-modal-actions {
+    flex-direction: column;
+  }
+
+  .admin-whatsapp-button,
+  .admin-secondary-button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 380px) {
+  .admin-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-stat-card {
+    min-height: 145px;
+  }
+
+  .admin-detail-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-detail-grid > div {
+    padding: 13px 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .admin-dashboard *,
+  .admin-dashboard *::before,
+  .admin-dashboard *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+}

@@ -1,6 +1,6 @@
 
 import { Link } from "react-router-dom";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, Truck } from "lucide-react";
 import QuoteForm from "./QuoteForm";
 import "./Cotacao.css";
 
@@ -10,34 +10,34 @@ export default function Cotacao() {
       <header className="cotacao-header">
         <Link to="/" className="cotacao-back">
           <ArrowLeft size={18} />
-          Voltar à página inicial
+          <span>Voltar à página inicial</span>
         </Link>
 
-        <div className="cotacao-brand">
-          MOHAMAD <span>TRANSPORTES</span>
-        </div>
+        <Link to="/" className="cotacao-brand">
+          <span className="cotacao-brand-icon">
+            <Truck size={23} />
+          </span>
+
+          <span className="cotacao-brand-text">
+            MOHAMAD
+            <small>TRANSPORTES</small>
+          </span>
+        </Link>
       </header>
 
-      <section className="cotacao-intro">
-        <span className="cotacao-label">PEDIDO DE COTAÇÃO</span>
-
-        <h1>
-          Vamos transportar
-          <br />
-          <span>a sua carga.</span>
-        </h1>
-
-        <p>
-          Preencha os dados abaixo para apresentar o seu pedido
-          de cotação à MOHAMAD Transportes.
-        </p>
-      </section>
-
-      <QuoteForm />
+      <main>
+        <QuoteForm />
+      </main>
 
       <footer className="cotacao-footer">
-        © {new Date().getFullYear()} MOHAMAD Transportes.
-        Todos os direitos reservados.
+        <div className="cotacao-footer-brand">
+          MOHAMAD <span>TRANSPORTES</span>
+        </div>
+
+        <p>
+          © {new Date().getFullYear()} MOHAMAD Transportes.
+          Todos os direitos reservados.
+        </p>
       </footer>
     </div>
   );
