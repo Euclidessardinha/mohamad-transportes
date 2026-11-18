@@ -1,10 +1,13 @@
 
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import { ArrowLeft, Truck } from "lucide-react";
 import QuoteForm from "./QuoteForm";
 import "./Cotacao.css";
 
 export default function Cotacao() {
+  const [searchParams] = useSearchParams();
+  const servico = searchParams.get("servico") || "";
+
   return (
     <div className="cotacao-page">
       <header className="cotacao-header">
@@ -26,7 +29,7 @@ export default function Cotacao() {
       </header>
 
       <main>
-        <QuoteForm />
+        <QuoteForm initialService={servico} />
       </main>
 
       <footer className="cotacao-footer">

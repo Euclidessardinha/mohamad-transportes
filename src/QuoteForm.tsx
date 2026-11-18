@@ -22,6 +22,10 @@ type QuoteData = {
   detalhes: string;
 };
 
+type QuoteFormProps = {
+  initialService?: string;
+};
+
 const initialForm: QuoteData = {
   nome: "",
   empresa: "",
@@ -35,8 +39,12 @@ const initialForm: QuoteData = {
   detalhes: "",
 };
 
-function QuoteForm() {
-  const [form, setForm] = useState<QuoteData>(initialForm);
+function QuoteForm({ initialService = "" }: QuoteFormProps) {
+  const [form, setForm] = useState<QuoteData>(() => ({
+    ...initialForm,
+    tipoCarga: initialService,
+  }));
+
   const [submitted, setSubmitted] = useState(false);
   const [saving, setSaving] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
@@ -99,7 +107,10 @@ function QuoteForm() {
   }
 
   function resetForm() {
-    setForm(initialForm);
+    setForm({
+      ...initialForm,
+      tipoCarga: initialService,
+    });
     setSubmitted(false);
     setErrorMessage("");
   }

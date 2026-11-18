@@ -1,7 +1,7 @@
 
 /* =========================================================
    MOHAMAD TRANSPORTE — ESTILO PRINCIPAL
-   Compatível com o App.jsx actual
+   Compatível com o App.tsx actual
    ========================================================= */
 
 :root {
@@ -27,7 +27,7 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 100px;
+  scroll-padding-top: 120px;
 }
 
 body {
@@ -123,50 +123,31 @@ a:focus-visible {
 }
 
 .header-inner {
-  min-height: 86px;
+  min-height: 125px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 25px;
 }
 
+/* LOGÓTIPO OFICIAL */
+
 .brand {
   display: inline-flex;
   align-items: center;
-  gap: 11px;
   flex-shrink: 0;
+  text-decoration: none;
 }
 
-.brand-icon {
-  width: 49px;
-  height: 49px;
-  display: grid;
-  place-items: center;
-  border-radius: 5px;
-  background: var(--blue);
-  color: var(--white);
+.brand-logo-image {
+  display: block;
+  width: 290px;
+  height: 105px;
+  object-fit: contain;
+  object-position: left center;
 }
 
-.brand-text {
-  display: flex;
-  flex-direction: column;
-  line-height: 1.15;
-}
-
-.brand-text strong {
-  color: var(--navy);
-  font-size: 21px;
-  font-weight: 900;
-  letter-spacing: 0.5px;
-}
-
-.brand-text small {
-  margin-top: 5px;
-  color: var(--blue);
-  font-size: 10px;
-  font-weight: 800;
-  letter-spacing: 2.8px;
-}
+/* Navegação */
 
 .navigation {
   display: flex;
@@ -775,6 +756,31 @@ a:focus-visible {
   text-align: center;
 }
 
+/* Cartões de serviços clicáveis */
+
+.service-card-clickable {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.service-card-clickable .service-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.service-card-clickable:hover .service-link {
+  color: #079ddd;
+}
+
+.service-card-clickable:focus-visible {
+  outline: 3px solid #079ddd;
+  outline-offset: 5px;
+  border-radius: 12px;
+}
+
 /* =========================================================
    PROCESSO DE COTAÇÃO
    ========================================================= */
@@ -845,11 +851,11 @@ a:focus-visible {
 }
 
 /* =========================================================
-   CTA — PEDIDO DE COTAÇÃO
+   CTA — PEDIDO DE COTAÇÃO COM SLIDESHOW
    ========================================================= */
 
 .cta-section {
-  min-height: 390px;
+  min-height: 520px;
   position: relative;
   display: flex;
   align-items: center;
@@ -857,36 +863,84 @@ a:focus-visible {
   overflow: hidden;
   isolation: isolate;
   padding: 75px 24px;
-  background: var(--navy);
+  background: #102a43;
   color: var(--white);
 }
 
-.cta-section::before {
-  content: "";
+/* Fotografias em ecrã completo */
+
+.cta-slideshow {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  overflow: hidden;
+}
+
+.cta-slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0;
+  animation: ctaImageChange 30s infinite;
+}
+
+/* Camada muito ligeira sobre as fotografias */
+
+.cta-overlay {
   position: absolute;
   inset: 0;
   z-index: -1;
-  background: linear-gradient(
-    110deg,
-    rgba(7, 24, 39, 0.98),
-    rgba(16, 42, 67, 0.92)
-  );
+  background: rgba(0, 0, 0, 0.05);
 }
+
+/* Animação das fotografias */
+
+@keyframes ctaImageChange {
+  0% {
+    opacity: 0;
+  }
+
+  3% {
+    opacity: 1;
+  }
+
+  15% {
+    opacity: 1;
+  }
+
+  18% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Decoração */
 
 .cta-decoration {
   position: absolute;
   right: 5%;
   bottom: -35px;
-  z-index: -1;
-  color: rgba(255, 255, 255, 0.07);
+  z-index: 0;
+  color: rgba(255, 255, 255, 0.12);
   transform: scaleX(-1);
 }
 
+/* Conteúdo */
+
 .cta-content {
-  width: min(720px, 100%);
+  width: min(850px, 100%);
   position: relative;
-  z-index: 1;
+  z-index: 2;
+  padding: 70px 25px;
   text-align: center;
+  color: #fff;
 }
 
 .cta-content .section-label {
@@ -895,7 +949,7 @@ a:focus-visible {
 
 .cta-content h2 {
   margin-bottom: 17px;
-  color: var(--white);
+  color: #fff;
   font-size: clamp(30px, 4vw, 43px);
   line-height: 1.2;
   font-weight: 900;
@@ -904,7 +958,7 @@ a:focus-visible {
 .cta-content > p {
   max-width: 580px;
   margin: 0 auto 27px;
-  color: rgba(255, 255, 255, 0.78);
+  color: #fff;
   font-size: 14px;
   line-height: 1.9;
 }
@@ -912,10 +966,29 @@ a:focus-visible {
 .cta-content > small {
   display: block;
   margin-top: 17px;
-  color: rgba(255, 255, 255, 0.62);
+  color: rgba(255, 255, 255, 0.9);
   font-size: 11px;
 }
 
+/* Telemóveis */
+
+@media (max-width: 760px) {
+  .cta-section {
+    min-height: 460px;
+  }
+
+  .cta-content {
+    padding: 60px 20px;
+  }
+
+  .cta-decoration {
+    right: -30px;
+  }
+
+  .cta-overlay {
+    background: rgba(0, 0, 0, 0.08);
+  }
+}
 /* =========================================================
    CARREIRAS
    ========================================================= */
@@ -974,8 +1047,13 @@ a:focus-visible {
   gap: 40px;
 }
 
-.footer .brand-text strong {
-  color: var(--white);
+/* Logótipo no rodapé */
+
+.footer-brand-column .brand-logo-image {
+  width: 230px;
+  height: 95px;
+  object-fit: contain;
+  object-position: left center;
 }
 
 .footer-brand-column > p {
@@ -1058,10 +1136,30 @@ a:focus-visible {
 }
 
 /* =========================================================
+   PÁGINAS DE DETALHES DOS SERVIÇOS
+   ========================================================= */
+
+.detail-header .brand-logo-image {
+  width: 210px;
+  height: 85px;
+  object-fit: contain;
+  object-position: left center;
+}
+
+/* =========================================================
    RESPONSIVIDADE — TABLETS E ECRÃS MÉDIOS
    ========================================================= */
 
 @media (max-width: 1050px) {
+  .header-inner {
+    gap: 16px;
+  }
+
+  .brand-logo-image {
+    width: 240px;
+    height: 95px;
+  }
+
   .navigation {
     gap: 18px;
   }
@@ -1098,7 +1196,7 @@ a:focus-visible {
 
 @media (max-width: 760px) {
   html {
-    scroll-padding-top: 85px;
+    scroll-padding-top: 95px;
   }
 
   .topbar-inner,
@@ -1126,29 +1224,30 @@ a:focus-visible {
   }
 
   .header-inner {
-    min-height: 75px;
+    min-height: 100px;
+    gap: 10px;
   }
 
-  .brand-icon {
-    width: 43px;
-    height: 43px;
+  /* Logótipo maior adaptado ao telemóvel */
+
+  .header .brand-logo-image {
+    width: 225px;
+    height: 85px;
   }
 
-  .brand-icon svg {
-    width: 25px;
-    height: 25px;
+  .detail-header .brand-logo-image {
+    width: 170px;
+    height: 70px;
   }
 
-  .brand-text strong {
-    font-size: 18px;
-  }
-
-  .brand-text small {
-    font-size: 9px;
+  .footer-brand-column .brand-logo-image {
+    width: 190px;
+    height: 80px;
   }
 
   .mobile-menu-button {
     display: grid;
+    flex-shrink: 0;
   }
 
   .navigation {
@@ -1332,6 +1431,20 @@ a:focus-visible {
     display: none;
   }
 
+  .header-inner {
+    min-height: 90px;
+  }
+
+  .header .brand-logo-image {
+    width: 195px;
+    height: 75px;
+  }
+
+  .detail-header .brand-logo-image {
+    width: 150px;
+    height: 62px;
+  }
+
   .hero {
     min-height: 620px;
   }
@@ -1404,5 +1517,529 @@ a:focus-visible {
     transition-duration: 0.01ms !important;
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
+  }
+}
+
+
+
+/* =========================================================
+   CONTACTOS E LOCALIZAÇÃO
+   ========================================================= */
+
+.topbar-inner > a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 11px;
+  transition: color 0.2s ease;
+}
+
+.topbar-inner > a:hover {
+  color: #42bdf0;
+}
+
+.hero-phone-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 16px;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 700;
+  transition: color 0.2s ease;
+}
+
+.hero-phone-link svg {
+  color: #42bdf0;
+}
+
+.hero-phone-link:hover {
+  color: #42bdf0;
+}
+
+/* Secção principal */
+
+.contact-section {
+  background: #ffffff;
+}
+
+.contact-container {
+  width: min(var(--container), calc(100% - 48px));
+  margin-inline: auto;
+}
+
+.contact-heading {
+  max-width: 680px;
+  margin-bottom: 45px;
+}
+
+.contact-heading h2 {
+  margin-bottom: 18px;
+}
+
+.contact-heading > p {
+  max-width: 600px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+/* Organização dos contactos e mapa */
+
+.contact-layout {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  align-items: stretch;
+  gap: 35px;
+}
+
+.contact-information {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Cartões de contacto */
+
+.contact-card {
+  min-width: 0;
+  min-height: 105px;
+  padding: 19px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  box-shadow: 0 5px 18px rgba(16, 42, 67, 0.035);
+  color: var(--navy);
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+a.contact-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--blue);
+  box-shadow: var(--shadow);
+}
+
+.contact-card > svg:last-child {
+  flex-shrink: 0;
+  margin-left: auto;
+  color: var(--blue);
+}
+
+.contact-card-icon {
+  width: 49px;
+  height: 49px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  background: var(--blue-light);
+  color: var(--blue);
+  border-radius: 5px;
+}
+
+.contact-card-text {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.contact-card-text small {
+  color: var(--blue);
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 1.2px;
+}
+
+.contact-card-text strong {
+  overflow-wrap: anywhere;
+  color: var(--navy);
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.contact-card-text > span {
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.contact-nuit-card {
+  cursor: default;
+}
+
+/* Botões directos */
+
+.contact-direct-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 7px;
+}
+
+.contact-direct-actions .button {
+  flex: 1;
+  min-width: 150px;
+}
+
+.contact-email-button {
+  color: var(--navy);
+  border-color: var(--border);
+  background: #ffffff;
+}
+
+.contact-email-button:hover {
+  color: var(--blue);
+  border-color: var(--blue);
+  background: var(--blue-light);
+}
+
+/* Mapa */
+
+.contact-map-wrapper {
+  min-width: 0;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  background: var(--light);
+  border: 1px solid var(--border);
+  border-radius: 5px;
+}
+
+.contact-map-heading {
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.contact-map-heading .section-label {
+  margin-bottom: 5px;
+}
+
+.contact-map-heading h3 {
+  color: var(--navy);
+  font-size: 22px;
+  font-weight: 900;
+}
+
+.contact-map-heading > svg {
+  flex-shrink: 0;
+  color: var(--blue);
+}
+
+.contact-map {
+  width: 100%;
+  height: 350px;
+  overflow: hidden;
+  background: #dce6ed;
+  border-radius: 5px;
+}
+
+.contact-map iframe {
+  width: 100%;
+  height: 100%;
+  display: block;
+  border: 0;
+}
+
+.contact-map-footer {
+  padding-top: 19px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.contact-map-footer > div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--navy);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.contact-map-footer > div > svg {
+  flex-shrink: 0;
+  color: var(--blue);
+}
+
+.contact-map-footer > div > span {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-map-footer small {
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 400;
+}
+
+.contact-map-footer > a {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  flex-shrink: 0;
+  color: var(--blue);
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.contact-map-footer > a:hover {
+  color: var(--blue-hover);
+}
+
+.contact-map-note {
+  margin-top: 15px;
+  padding-top: 13px;
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.7;
+}
+
+/* =========================================================
+   CONTACTOS — TABLETS
+   ========================================================= */
+
+@media (max-width: 1050px) {
+  .contact-layout {
+    grid-template-columns: 1fr 1fr;
+    gap: 22px;
+  }
+
+  .contact-map-wrapper {
+    padding: 18px;
+  }
+
+  .contact-map {
+    height: 320px;
+  }
+
+  .contact-card {
+    padding: 15px;
+  }
+}
+
+/* =========================================================
+   CONTACTOS — TELEMÓVEIS
+   ========================================================= */
+
+@media (max-width: 760px) {
+  .contact-container {
+    width: calc(100% - 36px);
+  }
+
+  .contact-heading {
+    margin-bottom: 32px;
+  }
+
+  .contact-heading h2 {
+    font-size: 34px;
+  }
+
+  .contact-layout {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .contact-information {
+    gap: 12px;
+  }
+
+  .contact-card {
+    min-height: 95px;
+    padding: 15px;
+    gap: 12px;
+  }
+
+  .contact-card-icon {
+    width: 43px;
+    height: 43px;
+  }
+
+  .contact-card-text strong {
+    font-size: 13px;
+  }
+
+  .contact-map-wrapper {
+    padding: 16px;
+  }
+
+  .contact-map {
+    height: 300px;
+  }
+
+  .contact-map-heading h3 {
+    font-size: 20px;
+  }
+
+  .contact-map-footer {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .contact-map-footer > a {
+    padding-top: 5px;
+  }
+
+  .contact-direct-actions {
+    flex-direction: column;
+  }
+
+  .contact-direct-actions .button {
+    width: 100%;
+  }
+
+  .topbar-inner > a {
+    font-size: 10px;
+  }
+}
+
+/* =========================================================
+   CONTACTOS — ECRÃS PEQUENOS
+   ========================================================= */
+
+@media (max-width: 420px) {
+  .contact-card {
+    gap: 10px;
+    padding: 13px;
+  }
+
+  .contact-card-text strong {
+    font-size: 12px;
+  }
+
+  .contact-map {
+    height: 260px;
+  }
+
+  .contact-map-wrapper {
+    padding: 13px;
+  }
+
+  .hero-phone-link {
+    font-size: 13px;
+  }
+}
+
+
+/* =================================
+   CTA COM SLIDESHOW DE IMAGENS
+================================= */
+
+.cta-section {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  min-height: 520px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #102a43;
+}
+
+.cta-slideshow {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  overflow: hidden;
+}
+
+.cta-slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0;
+  animation: ctaImageChange 30s infinite;
+}
+
+.cta-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+
+  background: rgba(143, 123, 123, 0.04);
+
+}
+
+@keyframes ctaImageChange {
+  0% {
+    opacity: 0;
+  }
+
+  3% {
+    opacity: 1;
+  }
+
+  15% {
+    opacity: 1;
+  }
+
+  18% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+.cta-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 850px;
+  padding: 70px 25px;
+  text-align: center;
+  color: #fff;
+}
+
+.cta-content h2,
+.cta-content p,
+.cta-content small {
+  color: #fff;
+}
+
+.cta-decoration {
+  z-index: 1;
+  opacity: 0.12;
+}
+
+/* Telemóveis */
+@media (max-width: 600px) {
+  .cta-section {
+    min-height: 460px;
+  }
+
+  .cta-content {
+    padding: 60px 20px;
+  }
+
+  .cta-overlay {
+    background: rgba(5, 20, 35, 0.30);
+  }
+}
+
+/* Acessibilidade */
+@media (prefers-reduced-motion: reduce) {
+  .cta-slide {
+    animation: none;
+  }
+
+  .cta-slide:first-child {
+    opacity: 1;
   }
 }
