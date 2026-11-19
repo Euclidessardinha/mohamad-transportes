@@ -92,7 +92,7 @@ const services = [
     description:
       "Transporte rodoviário de contentores, com pedidos de cotação adaptados a cada carga.",
     image:
-      "https://images.unsplash.com/photo-1700716465891-9e5e9f501d7d?auto=format&fit=crop&w=1000&q=85",
+      "/contetor.jpg",
     details:
       "Precisa de transportar um contentor? Apresente-nos os detalhes da operação, incluindo o local de recolha, destino, tipo de contentor e data pretendida. A nossa equipa poderá analisar o pedido e confirmar a disponibilidade do serviço.",
     highlights: [
@@ -110,7 +110,7 @@ const services = [
     description:
       "Informação e pedidos de serviço sujeitos à confirmação das condições operacionais aplicáveis.",
     image:
-      "https://images.unsplash.com/photo-1519003722824-194d4455a60c?auto=format&fit=crop&w=1000&q=85",
+      "/contetor2.jpg",
     details:
       "Para pedidos relacionados com o transporte de combustíveis, entre em contacto com a nossa equipa e apresente as características da operação. A prestação deste serviço depende da confirmação das condições operacionais, técnicas e legais aplicáveis.",
     highlights: [
@@ -146,7 +146,7 @@ const services = [
     description:
       "Transporte de cargas diversas protegidas com lona, em operações nacionais e internacionais.",
     image:
-      "https://images.unsplash.com/photo-1716512060259-d114cfba13e8?auto=format&fit=crop&w=1000&q=85",
+      "/avulso.jpg",
     details:
       "A empresa dispõe de camiões para o transporte de cargas diversas, incluindo carga avulsa com lona. Este serviço está disponível para viagens nacionais e internacionais, mediante confirmação dos detalhes da operação.",
     highlights: [
@@ -363,32 +363,32 @@ function Home() {
 
   const ctaImages = [
   {
-    src: "https://images.unsplash.com/photo-1700716465891-9e5e9f501d7d?w=900",
+    src: "/primeira.jpg",
     alt: "Transporte rodoviário de contentores",
     label: "Transporte de contentores",
   },
   {
-    src: "https://images.unsplash.com/photo-1519003722824-194d4455a60c?w=900",
+    src: "/contetor.jpg",
     alt: "Camião de transporte de combustíveis",
     label: "Transporte de combustíveis",
   },
   {
-    src: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=900",
+    src: "contetor2.jpg",
     alt: "Transporte de mercadorias",
     label: "Transporte de mercadorias",
   },
   {
-    src: "https://images.unsplash.com/photo-1566576721346-d4a3b4eaeb55?w=900",
+    src: "/ima1.jpg",
     alt: "Camião de transporte de carga",
     label: "Transporte de cargas",
   },
   {
-    src: "https://images.unsplash.com/photo-1716512060259-d114cfba13e8?w=900",
+    src: "/ima2.jpg",
     alt: "Camião com carga coberta por lona",
     label: "Carga avulsa com lona",
   },
   {
-    src: "https://images.unsplash.com/photo-1717615840969-c8a39ea032a4?w=900",
+    src: "/ima2.jpg",
     alt: "Transporte rodoviário de mercadorias",
     label: "Transporte nacional",
   },
@@ -530,15 +530,7 @@ function Home() {
 
           </div>
 
-          <div className="hero-caption">
-            <div>
-              <span>01</span>
-              <span className="caption-line" />
-              <span>04</span>
-            </div>
-
-            <span>FOTOGRAFIA ILUSTRATIVA</span>
-          </div>
+          
 
         </section>
 
